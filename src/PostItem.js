@@ -7,7 +7,14 @@ export default function PostItem({
 }) {
   return <div className="post-item">
     <p>{user}: {title}</p>
-    <div className="post-replies">Replies: {replies} </div>
+    <div className="post-replies">
+        Replies: 
+      {
+        replies.map((reply, i) =>
+          <p key={`${reply}-${i}`}>{reply}</p>
+        )
+      }
+    </div>
   </div>;
 }
 
